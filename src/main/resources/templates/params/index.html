@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}"></title>
+</head>
+<body>
+	<H1 th:text="${title}"></H1>
+
+	<ul>
+		<li>
+		<a th:href="@{/params/show(text='Hi David')}">/params/show?text=Hi David</a> 
+	    </li>
+	    <li>
+	    <a th:href="@{/params/show(text='Hi Jhon')}">/params/show?text=Hi Jhon</a>
+	    </li>
+	</ul>
+</body>
+</html>
