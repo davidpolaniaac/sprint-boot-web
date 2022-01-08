@@ -1,5 +1,7 @@
 package com.github.davidpolaniaac.web.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +23,30 @@ public class ParamsController {
 			Model model) {
 		model.addAttribute("title", "Show params");
 		model.addAttribute("result", text);
+		return "params/show";
+	}
+	
+	@GetMapping("/mix")
+	public String mix(@RequestParam String text, @RequestParam Integer num,
+			Model model) {
+		model.addAttribute("title", "Show params mix");
+		model.addAttribute("result", text + " " + num);
+		return "params/show";
+	}
+	
+	@GetMapping("/mix-request")
+	public String mix(HttpServletRequest request,
+			Model model) {
+		String text = request.getParameter("text");
+		Integer num = null;
+		try {
+			num = Integer.parseInt(request.getParameter("num"));
+
+		} catch (NumberFormatException e) {
+			num = 0;
+		}
+		model.addAttribute("title", "Show params mix");
+		model.addAttribute("result", text + " " + num);
 		return "params/show";
 	}
 

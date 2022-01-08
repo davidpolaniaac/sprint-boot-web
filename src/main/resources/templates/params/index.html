@@ -14,6 +14,12 @@
 	    <li>
 	    <a th:href="@{/params/show(text='Hi Jhon')}">/params/show?text=Hi Jhon</a>
 	    </li>
+	    <li>
+	    <a th:href="@{/params/mix(text='Hi Jhon', num=123)}">/params/mix?text=Hi Jhon&num=123</a>
+	    </li>
+	    <li>
+	    <a th:href="@{/params/mix-request(text='Hi Jhon', num=123)}">/params/mix-request?text=Hi Jhon&num=123</a>
+	    </li>
 	</ul>
 </body>
 </html>
