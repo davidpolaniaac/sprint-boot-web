@@ -16,7 +16,7 @@ import com.github.davidpolaniaac.web.models.User;
 @Controller
 @RequestMapping("/app")
 public class IndexController {
-	
+
 	@Value("${project.message}")
 	private String message;
 
@@ -54,7 +54,7 @@ public class IndexController {
 	}
 
 	@ModelAttribute("options")
-	public List<String> options(){
+	public List<String> options() {
 		List<String> options = Arrays.asList("A", "B", "C");
 		return options;
 	}

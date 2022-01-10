@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${title}"></title>
+</head>
+<body>
+	<H1 th:text="${title}"></H1>
+	<h3 th:text="${bill.description}"></h3>
+
+	<div>
+		Client : <span
+			th:text="${bill.client.name + ' ' + bill.client.lastName}"></span>
+	</div>
+
+	<h4>Bill details</h4>
+
+	<span th:if="${bill.getItems().isEmpty()}">Bill in empty</span>
+
+
+	<table th:if="${not bill.getItems().isEmpty() }">
+		<thead>
+
+			<tr>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Count</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+
+		<tbody>
+
+			<tr th:each="item: ${bill.items}">
+				<th th:text="${item.product.name}"></th>
+				<th th:text="${item.product.price}"></th>
+				<th th:text="${item.count}"></th>
+				<th th:text="${item.total()}"></th>
+			</tr>
+
+		</tbody>
+
+
+	</table>
+</body>
+</html>

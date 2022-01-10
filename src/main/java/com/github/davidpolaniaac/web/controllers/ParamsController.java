@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/params")
 public class ParamsController {
-	
+
 	@GetMapping("/")
 	public String send(Model model) {
 		model.addAttribute("title", "Send params");
@@ -25,18 +25,16 @@ public class ParamsController {
 		model.addAttribute("result", text);
 		return "params/show";
 	}
-	
+
 	@GetMapping("/mix")
-	public String mix(@RequestParam String text, @RequestParam Integer num,
-			Model model) {
+	public String mix(@RequestParam String text, @RequestParam Integer num, Model model) {
 		model.addAttribute("title", "Show params mix");
 		model.addAttribute("result", text + " " + num);
 		return "params/show";
 	}
-	
+
 	@GetMapping("/mix-request")
-	public String mix(HttpServletRequest request,
-			Model model) {
+	public String mix(HttpServletRequest request, Model model) {
 		String text = request.getParameter("text");
 		Integer num = null;
 		try {

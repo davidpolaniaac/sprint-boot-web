@@ -1,4 +1,4 @@
-package com.github.davidpolaniaac.web.services;
+package com.github.davidpolaniaac.web.models.services;
 
 public class MySimpleService implements IMyService {
 

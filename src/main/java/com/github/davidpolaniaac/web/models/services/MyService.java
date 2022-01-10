@@ -1,4 +1,4 @@
-package com.github.davidpolaniaac.web.services;
+package com.github.davidpolaniaac.web.models.services;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;

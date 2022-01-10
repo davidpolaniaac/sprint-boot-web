@@ -15,19 +15,19 @@ public class VariableController {
 		model.addAttribute("title", "Send path variable");
 		return "variable/index";
 	}
-	
+
 	@GetMapping("/show/{text}")
 	public String show(@PathVariable String text, Model model) {
 		model.addAttribute("title", "Send path variable");
 		model.addAttribute("text", text);
 		return "variable/show";
 	}
-	
+
 	@GetMapping("/show/{text}/{num}")
 	public String show(@PathVariable String text, @PathVariable Integer num, Model model) {
 		model.addAttribute("title", "Send path variable");
 		model.addAttribute("text", text + " " + num);
 		return "variable/show";
 	}
-	
+
 }
